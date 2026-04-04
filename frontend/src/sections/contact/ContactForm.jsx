@@ -1,19 +1,19 @@
 ﻿const ContactForm = () => {
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12 md:py-20">
-      <header className="mb-16 text-center md:text-left">
-        <h1 className="text-4xl md:text-6xl font-bold text-primary mb-4 leading-tight tracking-tight">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-20">
+      <header className="mb-10 md:mb-16 text-center md:text-left">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-primary mb-4 leading-tight tracking-tight">
           Connect with Our <br />
           <span className="text-secondary italic">Editorial Team.</span>
         </h1>
-        <p className="text-on-surface-variant max-w-2xl text-lg">
+        <p className="text-on-surface-variant max-w-2xl text-base md:text-lg">
           Experience the tranquility of Gangtok. Whether you have a specific room inquiry or need help planning your Sikkim itinerary, our concierge is here to assist.
         </p>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-7">
-          <div className="bg-surface-container-lowest rounded-2xl p-6 md:p-8 shadow-[0_12px_40px_rgba(20,27,43,0.04)]">
+          <div className="bg-surface-container-lowest rounded-2xl p-5 md:p-8 shadow-[0_12px_40px_rgba(20,27,43,0.04)]">
             <h2 className="text-2xl font-bold text-primary mb-8">Reservation Inquiry</h2>
 
             <form action="#" className="space-y-5">
@@ -88,7 +88,7 @@
                 <textarea className="w-full bg-transparent border border-outline-variant/50 rounded-md px-3 py-2.5 text-sm focus:border-primary focus:ring-0 resize-none" placeholder="Tell us about your arrival or special needs..." rows="4" />
               </div>
 
-              <button className="px-8 py-3 bg-gradient-to-br from-secondary to-secondary-container text-white rounded-xl font-bold tracking-widest uppercase text-xs shadow-lg shadow-secondary/20" type="submit">
+              <button className="w-full sm:w-auto px-8 py-3 bg-gradient-to-br from-secondary to-secondary-container text-white rounded-xl font-bold tracking-widest uppercase text-xs shadow-lg shadow-secondary/20" type="submit">
                 Submit Request
               </button>
             </form>

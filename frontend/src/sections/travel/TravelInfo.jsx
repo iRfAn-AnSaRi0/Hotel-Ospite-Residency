@@ -31,13 +31,13 @@
 
 const TravelInfo = () => {
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12 md:py-20 space-y-24">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-20 space-y-16 md:space-y-24">
       <header className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
         <div className="lg:col-span-8">
-          <h1 className="text-5xl md:text-7xl font-bold font-headline text-primary tracking-tight leading-[1.1] mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold font-headline text-primary tracking-tight leading-[1.1] mb-4 md:mb-6">
             Discover the <span className="text-secondary italic font-light">Soul</span> of Gangtok
           </h1>
-          <p className="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          <p className="text-base md:text-lg text-on-surface-variant max-w-2xl leading-relaxed">
             Explore curated local experiences, hidden monasteries, and breathtaking viewpoints just a short journey from our doorstep.
           </p>
         </div>
@@ -58,14 +58,14 @@ const TravelInfo = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {places.map((place) => (
             <div key={place.name} className="group bg-surface-container-low rounded-3xl overflow-hidden editorial-shadow flex flex-col transition-all duration-300 hover:scale-[1.01]">
-              <div className="h-80 overflow-hidden relative">
+              <div className="h-64 sm:h-72 md:h-80 overflow-hidden relative">
                 <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src={place.img} alt={place.name} />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-xs font-bold tracking-wider text-primary">
                   {place.distance}
                 </div>
               </div>
-              <div className="p-8 flex flex-col flex-1 space-y-4">
-                <h3 className="text-2xl font-bold font-headline text-primary">{place.name}</h3>
+              <div className="p-6 md:p-8 flex flex-col flex-1 space-y-4">
+                <h3 className="text-xl md:text-2xl font-bold font-headline text-primary">{place.name}</h3>
                 <p className="text-on-surface-variant leading-relaxed">{place.desc}</p>
                 <a
                   className="inline-flex items-center gap-2 text-secondary font-bold mt-auto"
@@ -82,7 +82,7 @@ const TravelInfo = () => {
         </div>
       </section>
 
-      <section className="bg-primary overflow-hidden rounded-[2.5rem] relative min-h-[420px] flex items-center">
+      <section className="bg-primary overflow-hidden rounded-3xl md:rounded-[2.5rem] relative min-h-[360px] md:min-h-[420px] flex items-center">
         <div className="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
           <img
             className="w-full h-full object-cover"
@@ -91,15 +91,15 @@ const TravelInfo = () => {
           />
         </div>
 
-        <div className="relative z-10 px-8 md:px-16 max-w-3xl space-y-6 py-16">
+        <div className="relative z-10 px-5 sm:px-8 md:px-16 max-w-3xl space-y-5 md:space-y-6 py-12 md:py-16">
           <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase">
             <span className="material-symbols-outlined text-sm">motorcycle</span>
             Riders Paradise
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold font-headline text-white leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold font-headline text-white leading-tight">
             Calling All <span className="text-amber-400">Road Warriors</span>
           </h2>
-          <p className="text-emerald-50/80 text-lg leading-relaxed">
+          <p className="text-emerald-50/80 text-base md:text-lg leading-relaxed">
             Sikkim's winding roads are best explored on two wheels. At Hotel Ospite Residency, we provide dedicated secure parking, toolkit assistance, and a community space where stories of the road are shared over hot tea.
           </p>
         </div>
@@ -107,11 +107,11 @@ const TravelInfo = () => {
 
       <section className="space-y-10">
         <div className="text-center space-y-3">
-          <h2 className="text-3xl font-bold font-headline text-primary">Your Local Gateway</h2>
+          <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary">Your Local Gateway</h2>
           <p className="text-on-surface-variant max-w-xl mx-auto">Centrally located in Gangtok, ensuring the best of the Himalayas is always within reach.</p>
         </div>
 
-        <div className="bg-surface-container-highest rounded-[2rem] h-[500px] w-full relative overflow-hidden editorial-shadow border border-outline-variant/30">
+        <div className="bg-surface-container-highest rounded-[1.5rem] md:rounded-[2rem] h-[340px] md:h-[500px] w-full relative overflow-hidden editorial-shadow border border-outline-variant/30">
           <iframe
             className="w-full h-full"
             loading="lazy"
@@ -120,8 +120,8 @@ const TravelInfo = () => {
             title="Hotel Ospite Residency Location"
           />
 
-          <div className="absolute top-6 left-6">
-            <div className="bg-white/90 backdrop-blur rounded-2xl p-4 shadow-xl border border-white max-w-xs">
+          <div className="absolute top-3 left-3 right-3 md:top-6 md:left-6 md:right-auto">
+            <div className="bg-white/90 backdrop-blur rounded-2xl p-3 md:p-4 shadow-xl border border-white max-w-none md:max-w-xs">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary-container">
                   <span className="material-symbols-outlined">location_on</span>

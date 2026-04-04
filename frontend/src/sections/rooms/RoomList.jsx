@@ -39,7 +39,7 @@
 
 const RoomSection = ({ room, reverse = false }) => {
   return (
-    <div className="grid md:grid-cols-12 gap-12 items-center">
+    <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
       <div className={`md:col-span-7 group ${reverse ? "order-1 md:order-2" : ""}`}>
         <div className="relative overflow-hidden rounded-2xl editorial-shadow aspect-[4/3]">
           <img alt={room.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={room.image} />
@@ -51,8 +51,8 @@ const RoomSection = ({ room, reverse = false }) => {
         </div>
       </div>
 
-      <div className={`md:col-span-5 space-y-6 ${reverse ? "order-2 md:order-1" : ""}`}>
-        <h2 className="text-4xl font-headline font-bold text-primary">{room.name}</h2>
+      <div className={`md:col-span-5 space-y-5 md:space-y-6 ${reverse ? "order-2 md:order-1" : ""}`}>
+        <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">{room.name}</h2>
         <p className="text-on-surface-variant leading-relaxed">{room.desc}</p>
 
         <div className="bg-surface-container-low p-6 rounded-xl">
@@ -69,9 +69,12 @@ const RoomSection = ({ room, reverse = false }) => {
           </table>
         </div>
 
-        <button className="w-full py-4 bg-primary text-on-primary rounded-xl font-bold uppercase tracking-widest text-sm transition-all hover:brightness-110 active:scale-95 shadow-lg shadow-primary/10">
+        <Link
+          className="w-full py-4 bg-primary text-on-primary rounded-xl font-bold uppercase tracking-widest text-sm transition-all hover:brightness-110 active:scale-95 shadow-lg shadow-primary/10 text-center block"
+          to="/contact"
+        >
           Book This Room
-        </button>
+        </Link>
       </div>
     </div>
   );
@@ -79,29 +82,29 @@ const RoomSection = ({ room, reverse = false }) => {
 
 const RoomList = () => {
   return (
-    <main className="pt-24 pb-20">
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+    <main className="pt-20 md:pt-24 pb-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-14 md:mb-20">
         <div className="max-w-3xl">
           <span className="text-secondary font-bold tracking-[0.2em] uppercase text-xs block mb-4">Room Categories</span>
-          <h1 className="text-5xl md:text-7xl font-headline font-bold text-primary tracking-tight leading-[1.1] mb-8">Our Rooms &amp; Suites</h1>
-          <p className="text-on-surface-variant text-lg leading-relaxed max-w-2xl">
+          <h1 className="text-3xl sm:text-4xl md:text-7xl font-headline font-bold text-primary tracking-tight leading-[1.1] mb-6 md:mb-8">Our Rooms &amp; Suites</h1>
+          <p className="text-base md:text-lg text-on-surface-variant leading-relaxed max-w-2xl">
             Choose from Super Deluxe, Deluxe, and Standard rooms designed for peaceful stays with modern comfort and complimentary Wi-Fi.
           </p>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 space-y-32">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-16 md:space-y-32">
         <RoomSection room={roomData[0]} />
         <RoomSection room={roomData[1]} reverse />
         <RoomSection room={roomData[2]} />
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 mt-32">
-        <div className="bg-emerald-950 rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden text-white">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-16 md:mt-32">
+        <div className="bg-emerald-950 rounded-3xl md:rounded-[2.5rem] p-6 md:p-16 relative overflow-hidden text-white">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-emerald-900/50 to-transparent" />
           <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-headline font-bold mb-6">Tariff Calculator</h2>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-6">Tariff Calculator</h2>
               <p className="text-emerald-100/70 mb-10 max-w-md">Plan your stay with tariff plans from the brochure.</p>
               <div className="space-y-6">
                 <div className="space-y-2">
@@ -135,9 +138,9 @@ const RoomList = () => {
               </div>
             </div>
 
-            <div className="bg-emerald-900/50 backdrop-blur-xl p-10 rounded-3xl border border-emerald-800/50 editorial-shadow text-center">
+            <div className="bg-emerald-900/50 backdrop-blur-xl p-6 md:p-10 rounded-3xl border border-emerald-800/50 editorial-shadow text-center">
               <span className="text-xs font-bold uppercase tracking-[0.3em] text-emerald-400 block mb-4">Estimated Total</span>
-              <div className="text-6xl font-headline font-bold text-amber-400 mb-2">\u20B92,000</div>
+              <div className="text-4xl md:text-6xl font-headline font-bold text-amber-400 mb-2">₹2,000</div>
               <p className="text-emerald-200/50 text-sm mb-10">EP plan, excluding taxes</p>
               <button className="w-full py-5 bg-amber-400 text-emerald-950 rounded-2xl font-bold uppercase tracking-widest text-sm hover:scale-[1.02] transition-all active:scale-95">
                 Confirm Reservation
@@ -147,7 +150,7 @@ const RoomList = () => {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 mt-32 grid md:grid-cols-2 gap-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-16 md:mt-32 grid md:grid-cols-2 gap-8">
         <div className="bg-surface-container-low rounded-3xl overflow-hidden flex flex-col h-full transition-all hover:bg-surface-container-high">
           <div className="h-80 overflow-hidden">
             <img alt="Dining Hall" className="w-full h-full object-cover" src="/brochure/image8.jpeg" />
@@ -191,3 +194,4 @@ const RoomList = () => {
 };
 
 export default RoomList;
+import { Link } from "react-router-dom";

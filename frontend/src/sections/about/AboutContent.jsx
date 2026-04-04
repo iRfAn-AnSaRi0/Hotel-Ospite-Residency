@@ -59,16 +59,16 @@ const gallery = [
 
 const AboutContent = () => {
   return (
-    <main className="pt-24 pb-20">
-      <section className="max-w-7xl mx-auto px-6 mb-24">
+    <main className="pt-20 md:pt-24 pb-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-16 md:mb-24">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="relative group">
             <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
               <img alt="Our Story" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/brochure/image2.jpeg" />
             </div>
           </div>
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary kerning-tight leading-tight">
+          <div className="space-y-5">
+            <h1 className="text-3xl md:text-6xl font-headline font-bold text-primary kerning-tight leading-tight">
               Our Story of <br />
               <span className="text-secondary">Quiet Luxury</span>
             </h1>
@@ -82,8 +82,8 @@ const AboutContent = () => {
         </div>
       </section>
 
-      <section className="bg-surface-container-low py-20 mb-24">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-surface-container-low py-14 md:py-20 mb-16 md:mb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-3">The Ospite Experience</h2>
           </div>
@@ -101,15 +101,15 @@ const AboutContent = () => {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 mb-24">
-        <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-10">Meet the Visionaries</h2>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-16 md:mb-24">
+        <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-8 md:mb-10">Meet the Visionaries</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {team.map((person) => (
-            <div key={person.name} className="group rounded-2xl bg-surface-container-low flex overflow-hidden">
-              <div className="w-1/2 overflow-hidden">
+            <div key={person.name} className="group rounded-2xl bg-surface-container-low flex flex-col sm:flex-row overflow-hidden">
+              <div className="w-full sm:w-1/2 overflow-hidden">
                 <img className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src={person.image} alt={person.name} />
               </div>
-              <div className="w-1/2 p-6 flex flex-col justify-center">
+              <div className="w-full sm:w-1/2 p-5 md:p-6 flex flex-col justify-center">
                 <span className="text-secondary font-semibold uppercase tracking-widest text-xs mb-1">{person.role}</span>
                 <h3 className="text-xl font-headline font-bold text-primary mb-3">{person.name}</h3>
                 <p className="text-on-surface-variant text-xs leading-relaxed">{person.text}</p>
@@ -119,8 +119,8 @@ const AboutContent = () => {
         </div>
       </section>
 
-      <section className="bg-primary text-on-primary py-20 mb-24">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-primary text-on-primary py-14 md:py-20 mb-16 md:mb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-3">Our Features</h2>
           </div>
@@ -135,7 +135,7 @@ const AboutContent = () => {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-20">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-3">Moments Captured</h2>
         </div>
