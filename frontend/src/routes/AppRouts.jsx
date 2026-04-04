@@ -1,0 +1,22 @@
+﻿import { Navigate, Route, Routes } from "react-router-dom";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Rooms from "../pages/Rooms";
+import Travel from "../pages/Travel";
+import Contact from "../pages/Contact";
+
+const AppRouts = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/rooms" element={<Rooms />} />
+      <Route path="/travels" element={<Travel />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
+};
+
+export default AppRouts;
+
