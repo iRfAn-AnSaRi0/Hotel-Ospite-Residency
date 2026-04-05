@@ -1,131 +1,73 @@
-/** @type {import('tailwindcss').Config} */
+﻿/** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: "#1F4D3E", //Primary
-        primaryLight: "#2F6F5E",
-
-        secondary: "#D4A017", //Secondary
-        secondaryLight: "#F2C94C",
-
-        background: "#FFFFFF", //Background
-        sectionBg: "#F9FAFB",
-
-        textPrimary: "#111827",   //Text Colors
-        textSecondary: "#6B7280", //Text Colors
-
+        tertiary: "#00362b",
+        "surface-bright": "#f9f9ff",
+        "inverse-primary": "#a1d1bd",
+        surface: "#f9f9ff",
+        "tertiary-fixed": "#aef0da",
+        "on-secondary-fixed": "#261a00",
+        "on-error-container": "#93000a",
+        "on-surface": "#141b2b",
+        "inverse-on-surface": "#edf0ff",
+        "on-tertiary-fixed-variant": "#055141",
+        "on-secondary-container": "#715300",
+        "secondary-fixed": "#ffdfa0",
+        "surface-container-highest": "#dce2f7",
+        "tertiary-fixed-dim": "#93d3bf",
+        outline: "#717974",
+        "inverse-surface": "#293040",
+        "surface-dim": "#d3daef",
+        "on-tertiary": "#ffffff",
+        "surface-container": "#e9edff",
+        "secondary-fixed-dim": "#f6be39",
+        "on-primary-container": "#8dbda9",
+        "surface-container-high": "#e1e8fd",
+        "on-error": "#ffffff",
+        "secondary-container": "#ffc641",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary": "#ffffff",
+        "primary-fixed-dim": "#a1d1bd",
+        "surface-container-low": "#f1f3ff",
+        "on-tertiary-container": "#80bfab",
+        "on-secondary-fixed-variant": "#5c4300",
+        "outline-variant": "#c0c8c3",
+        "primary-fixed": "#bcedd8",
+        "surface-tint": "#3a6757",
+        "tertiary-container": "#024f40",
+        background: "#f9f9ff",
+        primary: "#023628",
+        error: "#ba1a1a",
+        "primary-container": "#1f4d3e",
+        "on-primary": "#ffffff",
+        "on-tertiary-fixed": "#002019",
+        "error-container": "#ffdad6",
+        "on-background": "#141b2b",
+        "surface-variant": "#dce2f7",
+        "on-surface-variant": "#414945",
+        "on-primary-fixed": "#002117",
+        secondary: "#795900",
+        "on-primary-fixed-variant": "#214f40"
       },
-
-      fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        heading: ["Poppins", "sans-serif"]
-      },
-
-      fontSize: {
-        xs: "12px",
-        sm: "14px",
-        base: "16px",
-        lg: "18px",
-        xl: "20px",
-        "2xl": "24px",
-        "3xl": "30px",
-        "4xl": "36px"
-      },
-
-      fontWeight: {
-        normal: 400,
-        medium: 500,
-        semibold: 600,
-        bold: 700
-      },
-
-      spacing: {
-        xs: "4px",
-        sm: "8px",
-        md: "16px",
-        lg: "24px",
-        xl: "32px",
-        "2xl": "48px",
-        "3xl": "64px",
-        "4xl": "80px"
-      },
-
-      container: {
-        center: true,
-        padding: "16px",
-        screens: {
-          sm: "640px",
-          md: "768px",
-          lg: "1024px",
-          xl: "1200px"
-        }
-      },
-
       borderRadius: {
-        sm: "6px",
-        md: "8px",
-        lg: "12px",
-        xl: "16px"
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        full: "9999px"
       },
-
-      boxShadow: {
-        card: "0 4px 12px rgba(0,0,0,0.08)",
-        modal: "0 10px 30px rgba(0,0,0,0.15)"
+      fontFamily: {
+        headline: ["Poppins", "Plus Jakarta Sans", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        label: ["Inter", "sans-serif"]
       },
-
-      height: {
-        btn: "44px",
-        "btn-lg": "52px",
-        input: "44px"
-      },
-
-      minHeight: {
-        hero: "70vh"
-      },
-
-      maxWidth: {
-        form: "420px",
-        modal: "600px",
-        page: "1200px"
-      },
-      transitionDuration: {
-        200: "200ms",
-        300: "300ms"
-      },
-      zIndex: {
-        navbar: "100",
-        dropdown: "200",
-        modal: "500"
-      },
-      gridTemplateColumns: {
-        services: "repeat(auto-fit, minmax(240px, 1fr))"
-      },
-
-      keyframes: {
-        fadeIn: {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 1 }
-        }
-      },
-
-      animation: {
-        fade: "fadeIn 0.3s ease-in-out"
-      },
-
       scale: {
         102: "1.02"
-      },
-
-      backdropBlur: {
-        xs: "2px"
-      },
-
-    },
+      }
+    }
   },
-  plugins: [],
-}
+  plugins: []
+};
+

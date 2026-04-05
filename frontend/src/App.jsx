@@ -1,13 +1,14 @@
-
+﻿import { BrowserRouter } from "react-router-dom";
+import ScrollToTop from "./components/layout/ScrollToTop";
+import AppRouts from "./routes/AppRouts";
 
 function App() {
-  
-
   return (
-    <>
-     <h1 className="text-primary">Welcome to Vite</h1>
-    </>
-  )
+    <BrowserRouter>
+      <ScrollToTop />
+      <AppRouts />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
