@@ -1,18 +1,63 @@
 import { useState } from 'react'
 import SectionTitle from '../components/SectionTitle'
 import useReveal from '../components/useReveal'
+import { baseApi } from '../api/Api'
+import toast, { Toaster } from 'react-hot-toast'
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', checkin: '', checkout: '', room: '', plan: 'CP', guests: '1', message: '' })
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    checkInDate: '',
+    checkOutDate: '',
+    roomType: 'Standard',
+    mealPlan: 'EP - Room Only',
+    guests: 1,
+    specialRequest: ''
+  });
   const [sent, setSent] = useState(false)
   const r1 = useReveal()
 
+
+
   const handle = (e) => setForm({ ...form, [e.target.name]: e.target.value })
-  const submit = (e) => {
-    e.preventDefault()
-    setSent(true)
-    setForm({ name: '', email: '', phone: '', checkin: '', checkout: '', room: '', plan: 'CP', guests: '1', message: '' })
-  }
+
+  const submit = async (e) => {
+    e.preventDefault();
+    if (new Date(form.checkOutDate) <= new Date(form.checkInDate)) {
+      toast.error("Check-out must be after check-in");
+      return;
+    }
+    try {
+      const res = await baseApi.post("/api/v1/bookings/", form);
+      console.log(res.data);
+
+      // ✅ Check backend response
+      if (res.data.success) {
+        setSent(true);
+
+        setForm({
+          name: '',
+          email: '',
+          phone: '',
+          checkInDate: '',
+          checkOutDate: '',
+          roomType: 'Standard',
+          mealPlan: 'EP - Room Only',
+          guests: 1,
+          specialRequest: ''
+        });
+      } else {
+        // ❌ backend responded but failed
+        toast.error(res.data.message || "Booking failed");
+      }
+
+    } catch (error) {
+      console.log(error.response);
+      toast.error(error.response || "Something went wrong")
+    }
+  };
 
   const inputCls = 'w-full bg-cream border border-forest-200 rounded-xl px-4 py-3 text-sm font-body text-forest-800 placeholder-forest-300 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-400 transition-colors'
   const labelCls = 'block text-xs uppercase tracking-wider font-body font-semibold text-forest-500 mb-1.5'
@@ -125,18 +170,17 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className={labelCls}>Check-in Date *</label>
-                    <input name="checkin" type="date" value={form.checkin} onChange={handle} required className={inputCls} />
+                    <input name="checkInDate" type="date" value={form.checkInDate} onChange={handle} required className={inputCls} />
                   </div>
                   <div>
                     <label className={labelCls}>Check-out Date *</label>
-                    <input name="checkout" type="date" value={form.checkout} onChange={handle} required className={inputCls} />
+                    <input name="checkOutDate" type="date" value={form.checkOutDate} onChange={handle} required className={inputCls} />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                   <div>
                     <label className={labelCls}>Room Type</label>
-                    <select name="room" value={form.room} onChange={handle} className={inputCls}>
-                      <option value="">Any</option>
+                    <select name="roomType" value={form.roomType} onChange={handle} className={inputCls}>
                       <option>Super Deluxe</option>
                       <option>Deluxe</option>
                       <option>Standard</option>
@@ -144,25 +188,27 @@ export default function Contact() {
                   </div>
                   <div>
                     <label className={labelCls}>Meal Plan</label>
-                    <select name="plan" value={form.plan} onChange={handle} className={inputCls}>
-                      <option value="EP">EP – Room Only</option>
-                      <option value="CP">CP – + Breakfast</option>
-                      <option value="MAP">MAP – + Dinner</option>
-                      <option value="AP">AP – All Meals</option>
+                    <select name="mealPlan" value={form.mealPlan} onChange={handle} className={inputCls}>
+                      <option value="EP - Room Only">EP – Room Only</option>
+                      <option value="CP - + Breakfast">CP – + Breakfast</option>
+                      <option value="MAP - + Dinner">MAP – + Dinner</option>
+                      <option value="AP - All Meal">AP – All Meals</option>
                     </select>
                   </div>
                   <div>
                     <label className={labelCls}>Guests</label>
                     <select name="guests" value={form.guests} onChange={handle} className={inputCls}>
-                      {[1,2,3,4,5,6].map(n => <option key={n}>{n}</option>)}
+                      {[1, 2, 3, 4, 5, 6].map(n => (
+                        <option key={n} value={n}>{n}</option>
+                      ))}
                     </select>
                   </div>
                 </div>
                 <div>
                   <label className={labelCls}>Enquiry</label>
                   <textarea
-                    name="message"
-                    value={form.message}
+                    name="specialRequest"
+                    value={form.specialRequest}
                     onChange={handle}
                     rows={3}
                     placeholder="Any special requirements or questions..."

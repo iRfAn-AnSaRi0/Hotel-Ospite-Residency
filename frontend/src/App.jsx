@@ -8,6 +8,7 @@ import Rooms from './pages/Rooms'
 import Travel from './pages/Travel'
 import DistrictPage from './pages/DistrictPage'
 import Contact from './pages/Contact'
+import { Toaster } from "react-hot-toast"
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -18,6 +19,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <BrowserRouter>
+     <Toaster position="top-right" reverseOrder={false} />
       <ScrollToTop />
       <Navbar />
       <main className="min-h-screen">
