@@ -30,7 +30,7 @@ export default function Contact() {
       return;
     }
     try {
-      const res = await baseApi.post("/api/v1/bookings/", form);
+      const res = await baseApi.post("/bookings/", form);
       console.log(res.data);
 
       // ✅ Check backend response
